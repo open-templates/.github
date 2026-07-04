@@ -1,150 +1,115 @@
-# Instructions — github-repo-template
+# Instructions — open-templates `.github`
 
-Guide for maintainers and coding agents after creating a repository from this template.
+Guide for maintainers and coding agents working on the **organization meta-repository** (`open-templates/.github`), not on individual template repos.
 
-## What this template is
+## What this repository is
 
-A **blank GitHub repository shell**: documentation, Dependabot, CODEOWNERS, and one optional workflow to sign Dependabot commits. It is **not** tied to React, Node, Python, or any other stack until you add that code.
+| Path | Role |
+|------|------|
+| [`profile/README.md`](profile/README.md) | **Public org profile** — template catalog shown on [github.com/open-templates](https://github.com/open-templates) |
+| [`README.md`](README.md) | Landing page when browsing this repo |
+| [`INSTRUCTIONS.md`](INSTRUCTIONS.md) | This file — how to maintain the catalog |
+| [`CHANGELOG.md`](CHANGELOG.md) | Notable changes to the org meta-repo |
+| [`docs/`](docs/README.md) | Reference for workflows and GitHub UI files **in this repo** |
+| Community files | `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md` — org-wide defaults |
 
-### Included automation (only these)
-
-| Asset | Role |
-|-------|------|
-| `.github/dependabot.yml` | Opens dependency update PRs on a schedule |
-| `.github/workflows/dependabot-signature.yml` | Amends Dependabot commits with `Co-authored-by` |
-| `.github/CODEOWNERS` | Requests reviews from listed owners |
-
-Add your own CI (build, test, lint, deploy) when the project has a stack.
-
-Workflow and template details live under **[docs/README.md](docs/README.md)** (issue forms, PR template, dependabot-signature workflow).
-
-### Included markdown (GitHub UI)
-
-Root-level `.md` files are meant to be read on github.com. Each ends with a **Repository documents** footer: sibling files as horizontal links separated by ` | ` (the current page is plain text).
-
-| File | When to read |
-|------|----------------|
-| [README.md](README.md) | First visit — scope and quick start |
-| [docs/README.md](docs/README.md) | Workflows and GitHub issue/PR templates |
-| **INSTRUCTIONS.md** | Fork setup, releases, CHANGELOG automation |
-| [CHANGELOG.md](CHANGELOG.md) | Published version history |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | External contributors |
-| [SECURITY.md](SECURITY.md) | Security reports |
-| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community rules |
+Template source code and per-template docs live in **separate repositories** (e.g. `github-repo-template`, `react-supabase-auth-template`).
 
 ---
 
-## First steps after “Use this template”
+## Template categories
 
-1. **Rename** the repository and update titles in `README.md`, `CONTRIBUTING.md`, and issue templates.
-2. **CODEOWNERS** — Set `@your-org/team` or `@your-username` instead of `@xarlizard`.
-3. **Dependabot** — Edit `.github/dependabot.yml`:
-   - `package-ecosystem`: `npm`, `bun`, `pip`, `gomod`, `docker`, `github-actions`, etc.
-   - `directory`: `/` or monorepo path
-   - Remove the ecosystem block if unused (e.g. delete `bun` until you have a `package.json`).
-4. **Dependabot signer** — In `dependabot-signature.yml`, set `COAUTHOR_NAME` and `COAUTHOR_EMAIL` to the human maintainer.
-5. **Secrets** — Never commit real `.env` files; `.gitignore` already excludes common secret patterns. Commit only `.env.example` with placeholder values.
-6. **License** — Keep MIT or replace `LICENSE` and references in docs.
+Keep the catalog grouped into these sections (expand each over time):
+
+| Category | Purpose | Current template(s) |
+|----------|---------|------------------------|
+| **Repository templates** | Empty repo shells — docs, Dependabot, CODEOWNERS | `github-repo-template` |
+| **Package templates** | Publishable libraries — build, test, publish CI | `npm-package-template` |
+| **Frontend templates** | Client apps and UI starters | `react-supabase-auth-template` |
+| **Backend templates** | APIs, workers, services | `cf-hono-supabase-api-template` |
+
+When a frontend and backend template are designed to work together, call that out as a **suggested bundle** in `profile/README.md` (as with the Supabase auth pair).
 
 ---
 
-## CHANGELOG: feature-based batches from commit history
+## Adding a new template to the org index
 
-[CHANGELOG.md](CHANGELOG.md) follows [Keep a Changelog](https://keepachangelog.com/). Maintain it in **batches per release** (or per merged feature group), not one line per commit.
+1. **Create or publish** the template repository under the `open-templates` org.
+2. **Choose the category** (or add a new category section only if it does not fit the four above — discuss first).
+3. **Update [`profile/README.md`](profile/README.md)**:
+   - Add a row to the category table: **name** (link), **one-line summary**.
+   - Update the ASCII **Template map** if useful.
+   - Mention bundles if the new repo pairs with an existing one.
+4. **Update [`README.md`](README.md)** quick-reference tables to match.
+5. **Record the change** in [`CHANGELOG.md`](CHANGELOG.md) under `### Added` or `### Changed`.
+6. **Org profile description** (optional): GitHub org **Settings → Profile** — keep in sync with the tagline in `profile/README.md`.
 
-### 1. Use conventional commits
+Do **not** duplicate full template READMEs in the org profile; link out and summarize in one sentence.
 
-Train contributors (see [CONTRIBUTING.md](CONTRIBUTING.md)) to write messages that map to changelog sections:
+---
 
-| Prefix | CHANGELOG section |
-|--------|-------------------|
-| `feat:` | Added |
-| `fix:` | Fixed |
-| `docs:` | (usually omit or “Documentation”) |
-| `chore:` / `ci:` | (usually omit unless user-visible) |
-| `refactor:` | Changed |
-| `perf:` | Changed |
-| `BREAKING CHANGE:` or `!` | Changed — breaking |
+## Editing the org profile README
 
-**Feature-based batching:** Squash or group PRs so one feature = one `feat:` (or one PR with a clear title). Release notes stay readable.
+[`profile/README.md`](profile/README.md) supports GitHub-flavored markdown plus limited HTML (e.g. `<div align="center">`).
 
-Example batch for version `0.2.0`:
+Guidelines:
 
-```text
-feat(auth): add Google OAuth login
-feat(api): add GET /me endpoint
-fix(cors): allow local dev origin
-```
+- Lead with what **open-templates** is and how to use templates.
+- One table per category; consistent columns: **Template** | **Summary**.
+- Note that categories will grow (“more coming”).
+- Keep links absolute to `https://github.com/open-templates/<repo>`.
+- Avoid stack-specific walls of text — detail belongs in each template repo.
 
-Becomes one CHANGELOG block:
+Preview: push to `main` and open [github.com/open-templates](https://github.com/open-templates) (may take a short moment to refresh).
+
+---
+
+## CHANGELOG (this repo)
+
+[CHANGELOG.md](CHANGELOG.md) tracks **org meta-repo** changes (profile index, org docs, shared `.github` config)—not releases of individual templates. Each template repo maintains its own changelog.
+
+Use **feature-based batches** and [conventional commits](https://www.conventionalcommits.org/):
+
+| Prefix | Typical use |
+|--------|-------------|
+| `docs:` | Profile index, README, INSTRUCTIONS |
+| `feat:` | New org-wide workflow or template listing |
+| `chore:` | Dependabot, housekeeping |
+
+Example entry when adding a template:
 
 ```markdown
 ## [0.2.0] - 2026-07-04
 
 ### Added
-- Google OAuth login
-- `GET /me` API endpoint
-
-### Fixed
-- CORS for local development origin
+- Frontend template: `next-starter-template` in org profile index
 ```
-
-### 2. Generate a draft from git (manual or scripted)
-
-Between tags `v0.1.0` and `HEAD`, list commits and group by type:
-
-```bash
-git log v0.1.0..HEAD --pretty=format:"%s" --no-merges
-```
-
-Filter lines starting with `feat:`, `fix:`, etc., strip the prefix for bullet text, and paste under the right `###` heading in `CHANGELOG.md`.
-
-Optional tools (add when you adopt a stack):
-
-- **[git-cliff](https://git-cliff.org/)** — `git cliff --tag v0.2.0` from conventional commits
-- **[conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)** — npm CLI
-- **GitHub Release** — Generate release notes from PR titles when merging to `main`
-
-### 3. Release workflow (recommended)
-
-1. Merge feature PRs to `main` using conventional titles.
-2. When ready to release, choose a version ([SemVer](https://semver.org/)).
-3. Run `git log <last-tag>..HEAD` (or git-cliff) and update `CHANGELOG.md` under `## [x.y.z] - YYYY-MM-DD`.
-4. Commit: `docs: release v0.2.0` (or include changelog in the release PR).
-5. Tag: `git tag v0.2.0 && git push origin v0.2.0`.
-6. Create a GitHub Release from the tag; paste the same section from `CHANGELOG.md`.
-
-### 4. Optional: automate later
-
-This template does **not** ship a CHANGELOG GitHub Action. When you add CI, common choices:
-
-- **release-please** — Opens release PRs with updated CHANGELOG from conventional commits
-- **git-cliff-action** — Updates `CHANGELOG.md` on tag or manual dispatch
-- **changesets** — Monorepo-friendly; human-written change summaries batched per package
-
-Start manual; automate once commit discipline is stable.
 
 ---
 
-## Dependabot workflow
+## Automation in this repo
 
-1. Dependabot opens PRs per `.github/dependabot.yml`.
-2. `dependabot-signature.yml` runs on `pull_request_target` and amends the commit message with `Co-authored-by`.
-3. CODEOWNERS on `.github/workflows/*` requests your review on workflow changes.
+Same pattern as [github-repo-template](https://github.com/open-templates/github-repo-template):
 
-Review dependency PRs like any other: changelog entry only if the upgrade is user-visible (e.g. security fix in `SECURITY.md` advisory, not every patch bump).
+| Asset | Role |
+|-------|------|
+| `.github/dependabot.yml` | Dependency update PRs |
+| `.github/workflows/dependabot-signature.yml` | `Co-authored-by` on Dependabot commits |
+| `.github/CODEOWNERS` | Review ownership |
+
+Details: [docs/README.md](docs/README.md).
 
 ---
 
 ## Agent checklist
 
-When extending a repo created from this template:
+When asked to update the org catalog:
 
-1. Read **INSTRUCTIONS.md** and [README.md](README.md).
-2. Do not commit secrets; respect `.gitignore` (Update it with more exceptions based on used tech-stack).
-3. Use conventional commits for features/fixes destined for CHANGELOG.
-4. Update [CHANGELOG.md](CHANGELOG.md) when cutting a release batch.
-5. Add new automation in `.github/workflows/` and document it in README.
+1. Read [`profile/README.md`](profile/README.md) and this file.
+2. Confirm the template repo exists and which **category** it belongs to.
+3. Add a table row + optional bundle note; sync [`README.md`](README.md).
+4. Append [`CHANGELOG.md`](CHANGELOG.md).
+5. Do not modify individual template repos unless explicitly scoped to that task.
 
 ---
 

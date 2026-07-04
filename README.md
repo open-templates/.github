@@ -1,67 +1,55 @@
-# github-repo-template
+# open-templates / `.github`
 
-A **minimal GitHub repository template** from [open-templates](https://github.com/open-templates). Use it to start any new project with community docs, dependency automation, and CODEOWNERS already in place—no application code or stack-specific tooling included.
+This is the [**special `.github` repository**](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/customizing-your-organizations-profile) for the [open-templates](https://github.com/open-templates) organization.
 
-## What you get out of the box
+- **`profile/README.md`** — Renders on the [organization profile](https://github.com/open-templates) as the public template catalog.
+- **Root files** (`INSTRUCTIONS.md`, `CHANGELOG.md`, community docs) — Meta-repo governance for the org itself, not for individual templates.
 
-### GitHub automation (included)
+Individual templates live in their own repositories (see index below).
 
-| File | Purpose |
-|------|---------|
-| [`.github/dependabot.yml`](.github/dependabot.yml) | Scheduled dependency update PRs (customize ecosystem and directory) |
-| [`.github/workflows/dependabot-signature.yml`](.github/workflows/dependabot-signature.yml) | Adds a `Co-authored-by` trailer to Dependabot PR commits |
-| [`.github/CODEOWNERS`](.github/CODEOWNERS) | Default review ownership for the repo and workflow files |
+---
 
-There are **no other GitHub Actions workflows** in this template (no CI build/test until you add them).
+## Template catalog
 
-### GitHub UI configuration (included)
+The full, formatted index is in [`profile/README.md`](profile/README.md) (org homepage). Quick reference:
 
-| File | Purpose |
-|------|---------|
-| [`.github/pull_request_template.md`](.github/pull_request_template.md) | PR description scaffold |
-| [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/) | Structured bug, feature, and documentation issue forms |
+### Repository templates
 
-Full reference for every workflow and template: **[docs/README.md](docs/README.md)**.
+| Template | Repository |
+|----------|------------|
+| github-repo-template | [open-templates/github-repo-template](https://github.com/open-templates/github-repo-template) |
 
-### Markdown documents (root)
+### Package templates
 
-These render in the GitHub web UI and cross-link at the bottom of each file for easy navigation:
+| Template | Repository |
+|----------|------------|
+| npm-package-template | [open-templates/npm-package-template](https://github.com/open-templates/npm-package-template) |
 
-| Document | Purpose |
-|----------|---------|
-| **README.md** (this file) | Project overview and template scope |
-| [docs/README.md](docs/README.md) | Index for workflow and GitHub template documentation |
-| [INSTRUCTIONS.md](INSTRUCTIONS.md) | Maintainer and agent guide: fork setup, CHANGELOG workflow, automation |
-| [CHANGELOG.md](CHANGELOG.md) | Version history ([Keep a Changelog](https://keepachangelog.com/)) |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute |
-| [SECURITY.md](SECURITY.md) | Vulnerability reporting |
-| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community standards |
+### Frontend templates
 
-Also included: [LICENSE](LICENSE) (MIT).
+| Template | Repository |
+|----------|------------|
+| react-supabase-auth-template | [open-templates/react-supabase-auth-template](https://github.com/open-templates/react-supabase-auth-template) |
 
-## Quick start
+### Backend templates
 
-1. Click **Use this template** on GitHub (or fork/clone).
-2. Rename the repository and update placeholders (`@xarlizard`, project name in docs).
-3. Customize [`.github/dependabot.yml`](.github/dependabot.yml) for your package manager (the default example uses `bun`).
-4. Read [INSTRUCTIONS.md](INSTRUCTIONS.md) for CHANGELOG automation and release batching.
-5. Add your application code, CI workflows, and stack-specific config as needed.
+| Template | Repository |
+|----------|------------|
+| cf-hono-supabase-api-template | [open-templates/cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template) |
 
-```bash
-git clone https://github.com/open-templates/github-repo-template.git my-new-repo
-cd my-new-repo
-```
+**Bundle:** `react-supabase-auth-template` + `cf-hono-supabase-api-template` — minimal Supabase auth UI with a Hono Worker API (`/health`, `/me`).
 
-## Customize after creating from template
+More templates per category are planned; update `profile/README.md` when adding repositories.
 
-- **Dependabot** — Change `package-ecosystem`, `directory`, assignees, and ignore rules.
-- **CODEOWNERS** — Replace `@xarlizard` with your team or username.
-- **Dependabot signer workflow** — Update `COAUTHOR_NAME` / `COAUTHOR_EMAIL` in the workflow file.
-- **`.gitignore`** — Already broad and stack-agnostic; trim or extend sections when you pick a stack.
+---
 
-## License
+## Maintainers
 
-MIT — see [LICENSE](LICENSE).
+- Edit the org profile index: [`profile/README.md`](profile/README.md)
+- Process for new templates and releases: [INSTRUCTIONS.md](INSTRUCTIONS.md)
+- Org-level changes: [CHANGELOG.md](CHANGELOG.md)
+
+Workflow and issue-template reference for **this** repo: [docs/README.md](docs/README.md).
 
 ---
 
