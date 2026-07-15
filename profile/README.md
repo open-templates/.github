@@ -12,15 +12,19 @@
 
 ## How to use
 
-1. Pick a template below (or a **bundle** — frontend + backend).
+1. Pick a **standalone** template below, or a **fullstack pack** (frontend + backend).
 2. Open the repository and click **Use this template** (or clone and customize).
 3. Follow each repo’s `README.md` and `INSTRUCTIONS.md` for setup.
 
-> More templates will be added to each category over time. Watch this org for new bundles and stacks.
+> More templates will be added over time. Watch this org for new packs and stacks.
 
 ---
 
-## Repository templates
+## Standalone templates
+
+Use on their own — no paired repository required.
+
+### Repository templates
 
 Blank GitHub repository shells — community docs, Dependabot, CODEOWNERS, and issue/PR scaffolding. No application code until you add it.
 
@@ -28,9 +32,7 @@ Blank GitHub repository shells — community docs, Dependabot, CODEOWNERS, and i
 |----------|---------|
 | [**github-repo-template**](https://github.com/open-templates/github-repo-template) | Stack-agnostic repo template: markdown docs with cross-links, Dependabot, dependabot-signature workflow, CODEOWNERS, issue & PR templates |
 
----
-
-## Package templates
+### Package templates
 
 Publishable libraries with TypeScript, tests, linting, and CI/CD for npm and GitHub Packages.
 
@@ -40,27 +42,23 @@ Publishable libraries with TypeScript, tests, linting, and CI/CD for npm and Git
 
 ---
 
-## Frontend templates
+## Fullstack packs
 
-Client apps and UI starters. Pair with a backend template when you need an API.
+Frontend + backend templates wired to the same auth and API contracts — clone both repos and ship.
 
-| Template | Summary |
-|----------|---------|
-| [**react-supabase-auth-template**](https://github.com/open-templates/react-supabase-auth-template) | React 19 + Vite + Supabase Auth — email/password & Google OAuth, protected routes, health polling, `GET /me` via Worker API |
+### Supabase Auth Pack
 
-**Suggested bundle:** [react-supabase-auth-template](https://github.com/open-templates/react-supabase-auth-template) + [cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template)
+| Role | Template | Summary |
+|------|----------|---------|
+| Frontend | [**react-supabase-auth-template**](https://github.com/open-templates/react-supabase-auth-template) | React 19 + Vite + Supabase Auth — email/password & Google OAuth, protected routes, health polling, `GET /me` |
+| Backend | [**cf-hono-supabase-api-template**](https://github.com/open-templates/cf-hono-supabase-api-template) | Cloudflare Worker + Hono + Supabase — public `GET /health`, JWT-protected `GET /me` |
 
----
+### AI Chat Pack
 
-## Backend templates
-
-API and worker starters. Pair with a frontend template for full-stack auth flows.
-
-| Template | Summary |
-|----------|---------|
-| [**cf-hono-supabase-api-template**](https://github.com/open-templates/cf-hono-supabase-api-template) | Cloudflare Worker + Hono + Supabase — public `GET /health`, JWT-protected `GET /me` |
-
-**Suggested bundle:** [cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template) + [react-supabase-auth-template](https://github.com/open-templates/react-supabase-auth-template)
+| Role | Template | Summary |
+|------|----------|---------|
+| Frontend | [**react-supabase-auth-ai-chat-template**](https://github.com/open-templates/react-supabase-auth-ai-chat-template) | React 19 + Vite + Supabase Auth SPA with **AI chat** — session threads, markdown replies, multi-turn `POST /chat` |
+| Backend | [**cf-hono-supabase-gemini-api-template**](https://github.com/open-templates/cf-hono-supabase-gemini-api-template) | Cloudflare Worker + Hono + Supabase + **Gemini** — `GET /health`, JWT `GET /me` & `POST /chat` with conversation history |
 
 ---
 
@@ -68,14 +66,18 @@ API and worker starters. Pair with a frontend template for full-stack auth flows
 
 ```text
 open-templates/
-├── Repo Templates
-│   └── github-repo-template
-├── Package Templates
-│   └── npm-package-template
-├── Frontend Templates
-│   └── react-supabase-auth-template ──┐
-└── Backend Templates                  │  full-stack Supabase auth bundle
-    └── cf-hono-supabase-api-template ─┘
+├── Standalone
+│   ├── Repo Templates
+│   │   └── github-repo-template
+│   └── Package Templates
+│       └── npm-package-template
+└── Fullstack Packs
+    ├── Supabase Auth Pack
+    │   ├── react-supabase-auth-template (frontend)
+    │   └── cf-hono-supabase-api-template (backend)
+    └── AI Chat Pack
+        ├── react-supabase-auth-ai-chat-template (frontend)
+        └── cf-hono-supabase-gemini-api-template (backend)
 ```
 
 ---

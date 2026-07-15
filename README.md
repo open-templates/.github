@@ -13,33 +13,23 @@ Individual templates live in their own repositories (see index below).
 
 The full, formatted index is in [`profile/README.md`](profile/README.md) (org homepage). Quick reference:
 
-### Repository templates
+### Standalone templates
 
-| Template | Repository |
-|----------|------------|
-| github-repo-template | [open-templates/github-repo-template](https://github.com/open-templates/github-repo-template) |
+| Category | Template | Repository |
+|----------|----------|------------|
+| Repo | github-repo-template | [open-templates/github-repo-template](https://github.com/open-templates/github-repo-template) |
+| Package | npm-package-template | [open-templates/npm-package-template](https://github.com/open-templates/npm-package-template) |
 
-### Package templates
+### Fullstack packs
 
-| Template | Repository |
-|----------|------------|
-| npm-package-template | [open-templates/npm-package-template](https://github.com/open-templates/npm-package-template) |
+| Pack | Role | Template | Repository |
+|------|------|----------|------------|
+| Supabase Auth | Frontend | react-supabase-auth-template | [open-templates/react-supabase-auth-template](https://github.com/open-templates/react-supabase-auth-template) |
+| Supabase Auth | Backend | cf-hono-supabase-api-template | [open-templates/cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template) |
+| AI Chat | Frontend | react-supabase-auth-ai-chat-template | [open-templates/react-supabase-auth-ai-chat-template](https://github.com/open-templates/react-supabase-auth-ai-chat-template) |
+| AI Chat | Backend | cf-hono-supabase-gemini-api-template | [open-templates/cf-hono-supabase-gemini-api-template](https://github.com/open-templates/cf-hono-supabase-gemini-api-template) |
 
-### Frontend templates
-
-| Template | Repository |
-|----------|------------|
-| react-supabase-auth-template | [open-templates/react-supabase-auth-template](https://github.com/open-templates/react-supabase-auth-template) |
-
-### Backend templates
-
-| Template | Repository |
-|----------|------------|
-| cf-hono-supabase-api-template | [open-templates/cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template) |
-
-**Bundle:** `react-supabase-auth-template` + `cf-hono-supabase-api-template` — minimal Supabase auth UI with a Hono Worker API (`/health`, `/me`).
-
-More templates per category are planned; update `profile/README.md` when adding repositories.
+More templates are planned; update `profile/README.md` when adding repositories.
 
 ---
 
