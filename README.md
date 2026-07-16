@@ -22,12 +22,16 @@ The full, formatted index is in [`profile/README.md`](profile/README.md) (org ho
 
 ### Fullstack packs
 
-| Pack | Role | Template | Repository |
-|------|------|----------|------------|
-| Supabase Auth | Frontend | react-supabase-auth-template | [open-templates/react-supabase-auth-template](https://github.com/open-templates/react-supabase-auth-template) |
-| Supabase Auth | Backend | cf-hono-supabase-api-template | [open-templates/cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template) |
-| AI Chat | Frontend | react-supabase-auth-ai-chat-template | [open-templates/react-supabase-auth-ai-chat-template](https://github.com/open-templates/react-supabase-auth-ai-chat-template) |
-| AI Chat | Backend | cf-hono-supabase-gemini-api-template | [open-templates/cf-hono-supabase-gemini-api-template](https://github.com/open-templates/cf-hono-supabase-gemini-api-template) |
+| Pack | Role | Template | Stack | Repository |
+|------|------|----------|-------|------------|
+| Supabase Auth | Frontend | react-supabase-auth-template | React | [open-templates/react-supabase-auth-template](https://github.com/open-templates/react-supabase-auth-template) |
+| Supabase Auth | Backend | cf-hono-supabase-api-template | Hono | [open-templates/cf-hono-supabase-api-template](https://github.com/open-templates/cf-hono-supabase-api-template) |
+| Supabase Auth | Backend | cf-fastapi-supabase-api-template | FastAPI | [open-templates/cf-fastapi-supabase-api-template](https://github.com/open-templates/cf-fastapi-supabase-api-template) |
+| Supabase Auth | Backend | cf-rust-supabase-api-template | Rust | [open-templates/cf-rust-supabase-api-template](https://github.com/open-templates/cf-rust-supabase-api-template) |
+| AI Chat | Frontend | react-supabase-auth-ai-chat-template | React | [open-templates/react-supabase-auth-ai-chat-template](https://github.com/open-templates/react-supabase-auth-ai-chat-template) |
+| AI Chat | Backend | cf-hono-supabase-gemini-api-template | Hono | [open-templates/cf-hono-supabase-gemini-api-template](https://github.com/open-templates/cf-hono-supabase-gemini-api-template) |
+| AI Chat | Backend | cf-fastapi-supabase-gemini-api-template | FastAPI | [open-templates/cf-fastapi-supabase-gemini-api-template](https://github.com/open-templates/cf-fastapi-supabase-gemini-api-template) |
+| AI Chat | Backend | cf-rust-supabase-gemini-api-template | Rust | [open-templates/cf-rust-supabase-gemini-api-template](https://github.com/open-templates/cf-rust-supabase-gemini-api-template) |
 
 More templates are planned; update `profile/README.md` when adding repositories.
 

@@ -12,7 +12,7 @@
 
 ## How to use
 
-1. Pick a **standalone** template below, or a **fullstack pack** (frontend + backend).
+1. Pick a **standalone** template below, or a **fullstack pack** (frontend + one backend).
 2. Open the repository and click **Use this template** (or clone and customize).
 3. Follow each repo’s `README.md` and `INSTRUCTIONS.md` for setup.
 
@@ -44,21 +44,25 @@ Publishable libraries with TypeScript, tests, linting, and CI/CD for npm and Git
 
 ## Fullstack packs
 
-Frontend + backend templates wired to the same auth and API contracts — clone both repos and ship.
+Frontend + backend templates wired to the same auth and API contracts — clone both repos and ship. **Pick any backend stack** in a pack; the API contract is the same.
 
 ### Supabase Auth Pack
 
-| Role | Template | Summary |
-|------|----------|---------|
-| Frontend | [**react-supabase-auth-template**](https://github.com/open-templates/react-supabase-auth-template) | React 19 + Vite + Supabase Auth — email/password & Google OAuth, protected routes, health polling, `GET /me` |
-| Backend | [**cf-hono-supabase-api-template**](https://github.com/open-templates/cf-hono-supabase-api-template) | Cloudflare Worker + Hono + Supabase — public `GET /health`, JWT-protected `GET /me` |
+| Role | Template | Stack | Summary |
+|------|----------|-------|---------|
+| Frontend | [**react-supabase-auth-template**](https://github.com/open-templates/react-supabase-auth-template) | React | React 19 + Vite + Supabase Auth — OAuth, protected routes, `/health` + `/me` |
+| Backend | [**cf-hono-supabase-api-template**](https://github.com/open-templates/cf-hono-supabase-api-template) | Hono (TS) | Cloudflare Worker + Hono + Supabase — `GET /health`, JWT `GET /me` |
+| Backend | [**cf-fastapi-supabase-api-template**](https://github.com/open-templates/cf-fastapi-supabase-api-template) | FastAPI (Python) | Cloudflare Python Worker + FastAPI + Pydantic — same API contract |
+| Backend | [**cf-rust-supabase-api-template**](https://github.com/open-templates/cf-rust-supabase-api-template) | Rust | Cloudflare Worker + workers-rs — same API contract |
 
 ### AI Chat Pack
 
-| Role | Template | Summary |
-|------|----------|---------|
-| Frontend | [**react-supabase-auth-ai-chat-template**](https://github.com/open-templates/react-supabase-auth-ai-chat-template) | React 19 + Vite + Supabase Auth SPA with **AI chat** — session threads, markdown replies, multi-turn `POST /chat` |
-| Backend | [**cf-hono-supabase-gemini-api-template**](https://github.com/open-templates/cf-hono-supabase-gemini-api-template) | Cloudflare Worker + Hono + Supabase + **Gemini** — `GET /health`, JWT `GET /me` & `POST /chat` with conversation history |
+| Role | Template | Stack | Summary |
+|------|----------|-------|---------|
+| Frontend | [**react-supabase-auth-ai-chat-template**](https://github.com/open-templates/react-supabase-auth-ai-chat-template) | React | Supabase Auth SPA + AI chat — threads, markdown, multi-turn `POST /chat` |
+| Backend | [**cf-hono-supabase-gemini-api-template**](https://github.com/open-templates/cf-hono-supabase-gemini-api-template) | Hono (TS) | Hono + Supabase + Gemini — `/health`, `/me`, `/chat` |
+| Backend | [**cf-fastapi-supabase-gemini-api-template**](https://github.com/open-templates/cf-fastapi-supabase-gemini-api-template) | FastAPI (Python) | FastAPI + Gemini via httpx — same API contract |
+| Backend | [**cf-rust-supabase-gemini-api-template**](https://github.com/open-templates/cf-rust-supabase-gemini-api-template) | Rust | workers-rs + Gemini REST — same API contract |
 
 ---
 
@@ -67,17 +71,21 @@ Frontend + backend templates wired to the same auth and API contracts — clone 
 ```text
 open-templates/
 ├── Standalone
-│   ├── Repo Templates
-│   │   └── github-repo-template
-│   └── Package Templates
-│       └── npm-package-template
+│   ├── github-repo-template
+│   └── npm-package-template
 └── Fullstack Packs
     ├── Supabase Auth Pack
     │   ├── react-supabase-auth-template (frontend)
-    │   └── cf-hono-supabase-api-template (backend)
+    │   └── backend (pick one)
+    │       ├── cf-hono-supabase-api-template
+    │       ├── cf-fastapi-supabase-api-template
+    │       └── cf-rust-supabase-api-template
     └── AI Chat Pack
         ├── react-supabase-auth-ai-chat-template (frontend)
-        └── cf-hono-supabase-gemini-api-template (backend)
+        └── backend (pick one)
+            ├── cf-hono-supabase-gemini-api-template
+            ├── cf-fastapi-supabase-gemini-api-template
+            └── cf-rust-supabase-gemini-api-template
 ```
 
 ---
