@@ -57,6 +57,7 @@ Frontend + backend templates wired to the same auth and API contracts — clone 
 | Backend | [**cf-hono-supabase-api-template**](https://github.com/open-templates/cf-hono-supabase-api-template) | Hono (TS) | Cloudflare Worker + Hono + Supabase — `GET /health`, JWT `GET /me` |
 | Backend | [**cf-fastapi-supabase-api-template**](https://github.com/open-templates/cf-fastapi-supabase-api-template) | FastAPI (Python) | Cloudflare Python Worker + FastAPI + Pydantic — same API contract |
 | Backend | [**cf-rust-supabase-api-template**](https://github.com/open-templates/cf-rust-supabase-api-template) | Rust | Cloudflare Worker + workers-rs — same API contract |
+| Backend | [**vm-php-supabase-api-template**](https://github.com/open-templates/vm-php-supabase-api-template) | PHP (Docker) | Nginx + PHP-FPM on VM — same API contract; Terraform (Oracle) + cloud-init |
 
 ### AI Chat Pack
 
