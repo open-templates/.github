@@ -40,6 +40,14 @@ Publishable libraries with TypeScript, tests, linting, and CI/CD for npm and Git
 |----------|---------|
 | [**npm-package-template**](https://github.com/open-templates/npm-package-template) | Production-ready TypeScript npm package — dual ESM/CJS builds (tsup), Vitest, ESLint flat config, automated publish workflows, CodeQL |
 
+### Fullstack templates
+
+Single-repo apps with API + UI in one deployable unit.
+
+| Template | Summary |
+|----------|---------|
+| [**cf-hono-react-file-uploader-template**](https://github.com/open-templates/cf-hono-react-file-uploader-template) | Cloudflare Worker + Hono API + React SPA — file upload, metadata, ephemeral previews (no persistence) |
+
 ---
 
 ## Fullstack packs
@@ -79,7 +87,8 @@ Frontend + backend templates wired to the same auth and API contracts — clone 
 open-templates/
 ├── Standalone
 │   ├── github-repo-template
-│   └── npm-package-template
+│   ├── npm-package-template
+│   └── cf-hono-react-file-uploader-template   # fullstack CF (Hono + React)
 └── Fullstack Packs
     ├── Supabase Auth Pack
     │   ├── frontend (pick one)
